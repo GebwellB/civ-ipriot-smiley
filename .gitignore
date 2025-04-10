@@ -121,7 +121,7 @@ celerybeat.pid
 
 # Environments
 .env
-.venv
+#.venv # I wanted to uploaded my virtual enviroment, because of issues with the system-wide install of sense-hat and needing to remove references to RTIMU
 env/
 venv/
 ENV/
