@@ -143,8 +143,9 @@ python3 main.py
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
-> Your answer here
+> Class variable: The colours (WHITE, GREEN, RED, YELLOW, BLANK) - These are variables defined at the class level and shared across all instances of the class. They are used throughout the class. If one of these values is changed at the class level, it will affect every instance of the class.
 >
+> Instance variable: self.pixels - This is set when a new instance of Smiley is created. Each instance gets its own separate copy of self.pixels. If one instance modifies self.pixels, it won't affect any other instances.
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
