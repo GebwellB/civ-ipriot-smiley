@@ -128,18 +128,18 @@ python3 main.py
 
    | Control Flow | File       | First line  | Line range  |
    | ------------ | ---------- | ----------- | ----------- |
-   |  sequence    |  _         | _           | _           |
-   |  selection   | _          | _           | _           |
-   |  iteration   | _          | _           | _           |
+   |  sequence    | smiley.py  | 11          | 26 (15 lines)|
+   |  selection   | sad.py     | 26          | 30 (4 lines)|
+   |  iteration   | happy.py   | 30          | 31 (2 lines)|
 
 4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
    | Type                    | Used? | Example |
    | ----------------------- | ----- | --------|
-   | int                     | _     | _          |
-   | float                   | _     | _          |
-   | str                     | _     | _          |
-   | bool                    | _     | _          |
+   | int                     | Yes - happy.py & sad.py | pixel is an int, used to determine indivudal pixels, whereas "pixels" is a list |
+   | float                   | Yes - happy.py     | delay is a float, set to 0.25          |
+   | str                     | No     | A str object is used to show text, which isn't present in this code. Unless you count the doc strings, then yes, it does appear!         |
+   | bool                    | Yes - smiley.py     | dimmed is a bool, allowing True of False |
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
