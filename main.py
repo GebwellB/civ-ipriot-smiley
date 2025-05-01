@@ -6,11 +6,11 @@ import time
 
 from happy import Happy
 # My code:
-from sad import Sad
+# from sad import Sad
 
 def main():
-    #smiley = Happy()
-    smiley = Sad()
+    smiley = Happy()
+    #smiley = Sad()
 
     smiley.show()
 
