@@ -150,8 +150,9 @@ python3 main.py
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
 
-   > Your answer here
+   > In General: The intialiser runs first when the object is created. It's designed to set the state of the object and assign default values to attributes, if any.
    >
+   > In Particular: The Happy class inherits from Smiley and Blinkable, and its constructor begins by calling "super().__init__()" to initialise the parent classes. After that, it customises the object by drawing the mouth and eyes using "self.draw_mouth()" and "self.draw_eyes()".
 
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
