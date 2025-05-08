@@ -156,25 +156,35 @@ python3 main.py
 
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
-   > Your answer here
+   > First it calls Smiley and Blinkable using the 'super' called. This creates the face and initialises the abstract blink method. Then it draws the eyes and mouth using draw_mouth() and draw_eyes().
    >
+   > In order, this creates a flat yellow circle, then turns off the LEDs to make up the eyes and mouth
+
 
 ### Code style
 
 1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
    
-> Your answer here
+> snake_case
 >
+> This is a PEP8 standard and makes code easier to read. Using the PEP8 standard across different modules makes it easier to read and understand.
 
 2. List three aspects of this convention you see applied in the code.
 
-> Your answer here
->
+>1. draw_mouth()
+>2. draw_eyes()
+>3. wide_open=True
 
 3. Give two examples of organizational documentation in the code.
 
-> Your answer here
->
+>1. The docstrings
+> Example (in happy.py): 
+>      """
+>      Renders a mouth by blanking the pixels that form that object.
+>      """
+>2. Comments
+> Example (in smiley.py):
+>     "# We have encapsulated the SenseHat object"
 
 ### Identifying and understanding classes
 
@@ -186,41 +196,47 @@ python3 main.py
 
 | Class Name | Super or Sub? | Direct parent(s) |
 | ---------- | ------------- | ---------------- |
-| NotReal    | Sub           | NotRealParent    |
-|   ...      |   ...         |      ...         |
+| Sad        | Sub               | Smiley    |
+|   Happy      |   Sub         |      Smiley         |
+| Blinkable    | Sub           | Happy    |
+|   Smiley      |   Super         |      No Parents         |
+
 
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
 
-> Your answer here
+> Abstraction hides complex implementation details while exposing only what’s necessary to use a feature. It helps developers control how their code is used by defining a clear interface while keeping the internal logic hidden.
 >
+> For example: blinkable.py defines an abstract class by using the Python ABC module. It defines a method structure that all subclasses must follow. Any class that inherits from blinkable must implement the blink() method, without needing to understand how the rest of the system works
 
 3. What is the name of the process of deriving from base classes? What is its purpose in this project? (Max 150 words)
 
-> Your answer here
->
+> Inheritance.
+> The purpose in this project is to ensure all classes that require certain behaviours, like blinking, inherit the necessary code. This avoids repetition and keeps each class consistent.
 
 ### Compare and contrast classes
 
 Compare and contrast the classes Happy and Sad.
 
 1. What is the key difference between the two classes?
-   > Your answer here
-   >
+   > The Sad class does not inherit from Blinkable, meaning it is unable to blink.
+   
 2. What are the key similarities?
-   > Your answer here
-   >
+   > They both inherit from Smiley.
+   > They both draw the mouth and eyes similarly, just positioned differently to show happy or sad expressions.
+
 3. What difference stands out the most to you and why?
-   > Your answer here
-   >
+   > The blink method in Happy.py. It inherits from Blinkable, but due to abstraction, the method still needs to be defined within Happy.
+
 4. How does this difference affect the functionality of these classes
-   > Your answer here
-   >
+   > Sad is unable to blink due to the lack of inheritance from blinkable
+   
 
 ### Where is the Sense(Hat) in the code?
 
 1. Which class(es) utilize the functionality of the SenseHat?
-   > Your answer here
-   >
+   > 1. Smiley
+   > 2. Sad (via inheritance from Smiley)
+   > 3. Happy (via inheritance from Smiley)
 2. Which of these classes directly interact with the SenseHat functionalities?
    > Your answer here
    >
