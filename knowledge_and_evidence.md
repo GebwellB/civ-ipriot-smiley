@@ -197,7 +197,7 @@ python3 main.py
 | Class Name | Super or Sub? | Direct parent(s) |
 | ---------- | ------------- | ---------------- |
 | Sad        | Sub               | Smiley    |
-|   Happy      |   Sub         |      Smiley         |
+|   Happy      |   Sub         |      Smiley & Blinkable         |
 | Blinkable    | Sub           | Happy    |
 |   Smiley      |   Super         |      No Parents         |
 
@@ -238,10 +238,10 @@ Compare and contrast the classes Happy and Sad.
    > 2. Sad (via inheritance from Smiley)
    > 3. Happy (via inheritance from Smiley)
 2. Which of these classes directly interact with the SenseHat functionalities?
-   > Your answer here
+   > Smiley, with self.sense_hat = SenseHat() in the initializer
    >
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
-   > Your answer here
+   > Encapsulating the SenseHAT within the Smiley class both hides the SenseHAT object from the rest of the project and restricts its usage to the Smiley class only. With this setup, the "show" and "dim_display" methods inside the Smiley class interact with the SenseHAT object, but other classes such as "Sad" or "Happy" cannot access or modify it directly. This use of encapsulation helps keep control in one place and easier to manage.
    >
 
 ### Sad Smileys Can’t Blink (Or Can They?)
